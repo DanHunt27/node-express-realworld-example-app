@@ -14,7 +14,7 @@ var ArticleSchema = new mongoose.Schema(
     tagList: [{ type: String }],
     author: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   },
-  { timestamps: true }
+  { timestamps: true, usePushEach: true }
 );
 
 ArticleSchema.plugin(uniqueValidator, { message: "is already taken" });
